@@ -44,9 +44,9 @@ let number2=20;
 let result;
 number1--;
 console.log(number1); //결과: 9
-number1++;
+number1++; //9+1
 console.log(number1); //결과: 10
-result=number2++;
+result=number2++; //0+20(+1)
 console.log(result); //결과: 20
 result=++number2;
 console.log(result); //결과: 22
