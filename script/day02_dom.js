@@ -3,12 +3,14 @@
 // bom = browser object model 웹브라우저의 기본 객체
 // let hello = 'hello js';
 // window.alert(hello);
+// -------------------------------------
 // window.prompt('이건 뭘까?')
 // let qa = window.prompt('1+1?')
 // window.alert('정답은'+qa+'입니다.')
-// let ox = window.confirm('자바스크립트는 객체지향언어다.');
-// window.alert(ox)
-// 확인=true(참), 취소=false(거짓)
+// -------------------------------------
+let ox = window.confirm('자바스크립트는 객체지향언어다.');
+window.alert(ox)
+확인=true(참), 취소=false(거짓)
 
 // 아이디 객체 변수 대입하기
 // 변수 선언키워드 변수명 대입연산자 대입객체문법
