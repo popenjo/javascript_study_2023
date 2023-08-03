@@ -14,5 +14,34 @@
     <p style="margin-top:50px;">총 수량 <span id="number">0</span>개</p>
     <p>총 가격 <span id="result">0</span>원</p>
     <p><button type="button" id="reset">X</button></p>
+    <!-- 작성 순서 -->
+    <!-- 
+        1. 주문하기 버튼 1번 클릭할때마다 수량 증가하기
+        2. 수량에 따른 가격 출력하기 (1잔당 4800원)
+        3. x버튼 클릭 시 모든 수량, 가격 0으로 초기화 
+    -->
+    <script>
+        const order = document.querySelector('#order')
+        const number = document.querySelector('#number')
+        const result = document.querySelector('#result')
+        const reset = document.querySelector('#reset')
+        let num = 0
+        let money = 4800
+        let total = 0 //최종 가격
+        console.log(order, number, result)
+        console.log(reset)
+        // ------------------------------------------------
+        order.addEventListener('click',function(){
+            num++ //수량 데이터 변수 1증가
+            number.innerHTML = num
+            total = money*num
+            result.innerHTML = total.toLocaleString('ko-kr')
+        })
+        reset.addEventListener('click',function(){
+            num = 0
+            number.innerHTML = 0
+            result.innerHTML = 0
+        })
+    </script>
 </body>
 </html>
