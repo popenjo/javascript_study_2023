@@ -55,5 +55,17 @@
         </ul>
         <button type="button" id="point_all_btn">전액사용</button>
     </div>
+    <script>
+        const user_point = document.querySelector('#user_point')
+        const use_point = document.querySelector('#use_point')
+        const point_reset = document.querySelector('#point_reset')
+        const point_all_btn = document.querySelector('#point_all_btn')
+        console.log(user_point, use_point, point_reset, point_all_btn)
+        //----------------------------------------------------------------
+        const point = 1000
+        point_all_btn.addEventListener('click',function(){
+            user_point.value = point
+        })
+    </script>
 </body>
 </html>
