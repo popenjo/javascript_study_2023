@@ -1,0 +1,65 @@
+main {
+    width:1200px; margin:0 auto;
+    text-align: center; background:rgba(233,233,233,0.9);
+}
+/* 공통 제목 */
+main section .category {
+    font-size:1.3rem; font-weight:300; 
+    margin-bottom:40px;
+}
+main section .category::after {
+    display:block; content:''; background:#aaa;
+    height:2px; width:20px; margin:20px auto 0;
+}
+main section h1 {
+    font-size:1.5rem; margin:20px 0; letter-spacing:-0.02em;
+}
+main section .contents {
+    color:#adadad; font-weight: 600; margin-bottom:50px;
+}
+/* 카히스토리 영상 */
+/* 카히스토리 영상 - 탭 제목, 내용 */
+main #video .tab_title {
+    display:flex; flex-flow:row nowrap;
+    justify-content: center; margin:30px 0;
+}
+main #video .tab_title .active {margin-right:20px;}
+main #video .tab_title .active::after {
+    display:block; content:''; background: #189bfa;
+    margin:20px 0 auto; height:5px; width:100px;
+}
+main #video .tab_title a {}
+main #video .tab_contents {
+    
+}
+main #video .tab_contents .tab_c1 {position: relative;}
+main #video .tab_contents .tab_c1 img {
+    width:200px; position:absolute; right:45px; top:230px;
+}
+main #video .tab_contents .tab_c1 video {width:80%; margin:0 auto;}
+main #video .tab_contents .tab_c2 {}
+main #video .tab_contents .tab_c2 img {width:80%; margin:0 auto;}
+main #video .tab_contents .active {}
+/* 사고 이력 조회 */
+main .tab_title {margin-bottom:50px;}
+main .tab_title .active {}
+main .tab_title a {
+    margin-right:5px; border:1px solid #adadad; padding:15px 30px;
+}
+main .tab_contents {}
+main .tab_contents .tab_c1 {}
+main .tab_contents .tab_c1 .left {}
+main .tab_contents .tab_c1 .left h2 {}
+main .tab_contents .tab_c1 .left p img {}
+main .tab_contents .tab_c1 .left p {}
+main .tab_contents .tab_c1 .left p a {}
+main .tab_contents .tab_c1 .right {}
+main .tab_contents .tab_c1 .right h3 {}
+main .tab_contents .tab_c1 .right ul {}
+main .tab_contents .tab_c1 .right ul li {}
+main .tab_contents .tab_c1 .right ul li p {}
+main .tab_contents .tab_c1 .right ul li p img {}
+main .tab_contents .tab_c1 .right ul li .contents {}
+main .tab_contents .tab_c1 .right ul li .contents p {}
+main .tab_contents .tab_c1 .right ul li .contents p em {}
+main .tab_contents .tab_c1 .right ul li .contents p strong {}
