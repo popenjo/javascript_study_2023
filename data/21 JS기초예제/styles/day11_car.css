@@ -1,6 +1,6 @@
 main {
     width:1200px; margin:0 auto;
-    text-align: center; background:rgba(233,233,233,0.9);
+    text-align: center;
 }
 /* 공통 제목 */
 main section .category {
@@ -15,7 +15,7 @@ main section h1 {
     font-size:1.5rem; margin:20px 0; letter-spacing:-0.02em;
 }
 main section .contents {
-    color:#adadad; font-weight: 600; margin-bottom:50px;
+    color:#adadad; font-weight: 600; margin-bottom:30px;
 }
 /* 카히스토리 영상 */
 /* 카히스토리 영상 - 탭 제목, 내용 */
@@ -41,25 +41,57 @@ main #video .tab_contents .tab_c2 {}
 main #video .tab_contents .tab_c2 img {width:80%; margin:0 auto;}
 main #video .tab_contents .active {}
 /* 사고 이력 조회 */
-main .tab_title {margin-bottom:50px;}
-main .tab_title .active {}
-main .tab_title a {
-    margin-right:5px; border:1px solid #adadad; padding:15px 30px;
+main #menu .tab_title {
+    display:flex;
+    justify-content:center;
+    border-bottom:1px solid #222;
 }
-main .tab_contents {}
-main .tab_contents .tab_c1 {}
-main .tab_contents .tab_c1 .left {}
-main .tab_contents .tab_c1 .left h2 {}
-main .tab_contents .tab_c1 .left p img {}
-main .tab_contents .tab_c1 .left p {}
-main .tab_contents .tab_c1 .left p a {}
-main .tab_contents .tab_c1 .right {}
-main .tab_contents .tab_c1 .right h3 {}
-main .tab_contents .tab_c1 .right ul {}
-main .tab_contents .tab_c1 .right ul li {}
-main .tab_contents .tab_c1 .right ul li p {}
-main .tab_contents .tab_c1 .right ul li p img {}
-main .tab_contents .tab_c1 .right ul li .contents {}
-main .tab_contents .tab_c1 .right ul li .contents p {}
-main .tab_contents .tab_c1 .right ul li .contents p em {}
-main .tab_contents .tab_c1 .right ul li .contents p strong {}
+main #menu .tab_title .active {
+    border-top:5px solid #189bfa;
+    border-bottom:1px solid #fff;
+    border-left:1px solid #222;
+    border-right:1px solid #222;
+}
+main #menu .tab_title a:last-child {margin-right:0;}
+main #menu .tab_title a {
+    margin-right:10px; padding:15px; width:150px; background:#fff;
+    border:1px solid #888;
+    position:relative; bottom:-1px;
+    border-bottom:1px solid #222;
+}
+main #menu .tab_contents {}
+main #menu .tab_contents .tab_c1 {
+    display:flex;
+    margin-top:70px;
+}
+main #menu .tab_contents .tab_c1 .left {
+    text-align:left; width:60%;
+}
+main #menu .tab_contents .tab_c1 .left h2 {
+    font-size:1.7rem; color:#189bfa;
+}
+main #menu .tab_contents .tab_c1 .left p img {}
+main #menu .tab_contents .tab_c1 .left p:last-child {
+    margin-top:20px; line-height:20px;
+    letter-spacing:-0.02em;
+}
+main #menu .tab_contents .tab_c1 .left p a {color:#189bfa;}
+main #menu .tab_contents .tab_c1 .right {width:40%;}
+main #menu .tab_contents .tab_c1 .right h3 {text-align: left; font-size:1.2rem; margin-bottom:50px;}
+main #menu .tab_contents .tab_c1 .right ul {}
+main #menu .tab_contents .tab_c1 .right ul li {
+    display:flex; margin-bottom:30px;
+    border-bottom: 1px dashed #aaa;
+}
+main #menu .tab_contents .tab_c1 .right ul li:last-child {border-bottom:none;}
+main #menu .tab_contents .tab_c1 .right ul li p {text-align: left;}
+main #menu .tab_contents .tab_c1 .right ul li p img {margin-right:30px;}
+main #menu .tab_contents .tab_c1 .right ul li .contents {}
+main #menu .tab_contents .tab_c1 .right ul li .contents p {margin-bottom:10px;}
+main #menu .tab_contents .tab_c1 .right ul li .contents p em {color:#189bfa; font-weight:600;}
+main #menu .tab_contents .tab_c1 .right ul li .contents p strong {
+    font-weight: 600; font-size:1.2rem; color:#222;
+}
+main #menu .tab_contents .tab_c2 {height:400px;}
+main #menu .tab_contents .tab_c3 {height:400px;}
+main #menu .tab_contents .tab_c4 {height:400px;}
