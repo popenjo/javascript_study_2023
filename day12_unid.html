@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <title>unide</title>
+    <style>
+        header {
+            width:100%; height:100px;
+            background:rgba(255, 255,255,0.7);
+            position:fixed; left:0; top:0;z-index:999;
+            padding:0 30px;
+            display:flex; flex-flow:row nowrap;
+            justify-content:space-between;
+            align-items: center;
+        }
+        header h1 {}
+        header h1 a {}
+        header h1 a img {}
+        header nav {}
+        header nav a {
+            white-space:nowrap;
+        }
+        header nav .nav_bg {
+            background:#fff;
+            position:absolute; top:100px; right:0; width:100%; height:710px;
+        }
+        header nav .gnb {
+            display:flex; flex-flow:row nowrap;
+        }
+        header nav .gnb > li {
+            justify-content: space-between; position:relative;
+        }
+        header nav .gnb > li > a {
+            line-height:100px; padding-right:150px;
+            font-weight:600;
+        }
+        /* header nav .gnb > li > a:hover {
+            color:#0F6E38;
+        } */
+        header nav .gnb > li > .sub1 {
+            position:absolute; width:100%;
+            height:710px;
+        }
+        header nav .gnb > li > .sub1 > li {
+            padding-bottom:15px;
+        }
+        header nav .gnb > li > .sub1 > li:last-child {padding-bottom:0;}
+        header nav .gnb > li > .sub1 > li > a {
+            font-weight:600; display:inline-block; padding:15px 0 15px 15px;
+        }
+        header nav .gnb > li > .sub1 > li > .sub2 {}
+        header nav .gnb > li > .sub1 > li .sub2 li {
+            padding:15px 0;
+        }
+        header nav .gnb li > .sub1 > li .sub2 li a {
+            color:#777; display:block; padding:10px 0 10px 10px;
+            border-bottom:1px dashed #888;
+        }
+        header nav .gnb > li > .sub1 a:hover {color:rgb(7,104,72);}
+        header nav .gnb > li > .sub2 a:hover {color:rgb(7,104,72);}
+        header #m_nav {
+            display:dlex; flex-flow:column nowrap;
+            justify-content:space-between;
+            width:24px; height:32px;
+        }
+        header #m_nav span {
+            width:40px; height:6px; background:rgb(7,104,72);
+            border-radius:50px;
+            display:block;
+            margin:5px 0;
+        }
+        header #m_nav span:first-child {}
+        header #m_nav span:last-child {}
+        main {}
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="#"><img src="./unide/unid/logo.png" alt=""></a></h1>
+        <nav>
+            <div class="nav_bg"></div>
+            <ul class="gnb">
+                <li><a href="#">회사소개</a>
+                    <ul class="sub1">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">CEO인사말</a></li>
+                        <li><a href="#">연혁</a></li>
+                        <li><a href="#">2030 VISION</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">사업부소개</a>
+                    <ul class="sub1"><!-- sub1, depth(깊이1단계) -->
+                        <li><a href="#">화학사업부(CA)</a>
+                            <ul class="sub2">
+                                <li><a href="#">수산화칼륨</a></li>
+                                <li><a href="#">탄산칼륨</a></li>
+                                <li><a href="#">염산</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">보드사업부(BT)</a>
+                            <ul class="sub2">
+                                <li><a href="#">MDF</a></li>
+                                <li><a href="#">LPM</a></li>
+                                <li><a href="#">제재목</a></li>
+                                <li><a href="#">GOSSPAN</a></li>
+                                <li><a href="#">ECOPAN</a></li>
+                                <li><a href="#">올고다 마루</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">투자정보</a>
+                    <ul class="sub1">
+                        <li><a href="#">경영정보</a></li>
+                        <li><a href="#">재무정보</a></li>
+                        <li><a href="#">주가정보</a></li>
+                        <li><a href="#">공시자료</a></li>
+                        <li><a href="#">IR자료실</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">지속사능경영</a>
+                    <ul class="sub1">
+                        <li><a href="#">윤리경영</a></li>
+                        <li><a href="#">안전환경경영</a></li>
+                        <li><a href="#">사회공헌</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">채용</a>
+                    <ul class="sub1">
+                        <li><a href="#">채용사이트</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">고객센터</a>
+                    <ul class="sub1">
+                        <li><a href="#">뉴스</a></li>
+                        <li><a href="#">홍보동영상</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <a href="#" id="m_nav" title="모바일메뉴열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </header>
+    <main>
+        <img src="./unide/unid/bg.jpg" alt="">
+    </main>
+    <script>
+        
+        /* 
+        1.서브메뉴, 서브배경 모두 숨기기
+        2. gnb메뉴에 마우스 올렸을 때 서브메뉴, 서브배경 보이기
+        3. 메뉴에서 마우스 나갔을 때 서브메뉴, 서브배경 숨기기
+        (디자인 추가)
+        1. gnb 마우스 올렸을 시 서브메뉴 배경색 #ccc회색 적용하기
+        2. gnb 마우스 올렸을 시 (서브메뉴로 마우스 나가도 유지)
+            gnb글자색 녹색변경 유지하기
+        */
+        const sub = document.querySelectorAll('.sub1')
+        const gnb = document.querySelectorAll('.gnb > li')
+        const nav_bg = document.querySelector('.nav_bg')
+        console.log(sub, gnb, nav_bg)
+        // 1.서브메뉴, 서브배경 모두 숨기기
+        sub_func('none')
+        function sub_func(status){ //status 상태창
+            nav_bg.style.display = status
+            for(let i of sub){i.style.display = status}
+        }
+        // 2. gnb메뉴에 마우스 올렸을 때 서브메뉴, 서브배경 보이기
+        for(let i of gnb){
+            i.addEventListener('mouseover',function(){
+                sub_func('block')
+                i.lastElementChild.style.backgroundColor = '#ccc';
+                i.firstElementChild.style.color = 'rgb(7,104,72)'
+            })
+            // 3. 메뉴에서 마우스 나갔을 때 서브메뉴, 서브배경 숨기기
+            // (디자인 추가)
+            i.addEventListener('mouseout',function(){
+                sub_func('none')
+                i.lastElementChild.style.backgroundColor = '#fff'
+                i.firstElementChild.style.color = '#000'
+            })
+        }
+        
+    </script>
+</body>
+</html>
