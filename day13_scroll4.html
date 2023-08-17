@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <title>day13-scroll-4</title>
+    <style>
+        body, html {scroll-behavior: smooth;}
+        header {
+            position:fixed;
+            margin:50px 0 0 50px;
+        }
+        header h1 {
+            font-size:2.5rem; font-weight:700;
+            font-family: 'Noto Serif', serif;
+        }
+        header nav {margin-top:15px;}
+        header nav a {
+            padding:10px; font-weight:500;
+            font-family: 'Noto Serif', serif;
+        }
+        header nav a:hover {border-bottom:2px solid #000;}
+        aside {position:fixed; left:50px; top:400px;}
+        aside .active {
+            display:block;
+            width:100px !important ; height:4px;
+            background:#fff !important; 
+            transition:all 0.5s;
+        }
+        aside .bar {
+            display:block; height:4px; width:20px; margin-bottom:10px;
+            background:#000;
+        }
+        main {}
+        main .bg {
+            height:100vh;background-size:cover;
+            background-position:center;
+        }
+        main .bg1 {background-image:url(./images/scroll_images/bg1.jpg);}
+        main .bg2 {background-image:url(./images/scroll_images/bg2.jpg);}
+        main .bg3 {background-image:url(./images/scroll_images/bg3.jpg);}
+        main .bg4 {background-image:url(./images/scroll_images/bg4.jpg);}
+
+        #mouse {
+            background:rgba(255,255,255,0.3);
+            width:50px; height:50px;
+            border:3px solid #fff;
+            border-radius:50%;
+            /* 화면 최상단 스크롤 상관없이 고정 마우스 따라가는 css */
+            position:fixed; left:0; top:0; z-index:999;
+            /* 마우스 커서 중심으로 오게 하는방법 */
+            transform:translate(-50%, -50%); 
+            /* 마우스 시차 간격 주는 방법 */
+            transition:all 0.2s linear;
+            /* 필수 속성:마우스 따라다니는 이미지 만들경우 */
+            /* (위) 이미지에 의해서 링크, 버튼 등 선택이 안되는 문제 해결 */
+            pointer-events:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="mouse"></div>
+    <header>
+        <h1>Interior view</h1>
+        <nav>
+            <a href="#">A</a>
+            <a href="#">B</a>
+            <a href="#">C</a>
+            <a href="#">D</a>
+        </nav>
+    </header>
+    <aside>
+        <span class="bar active"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </aside>
+    <main>
+        <div class="bg bg1"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <div class="bg bg4"></div>
+    </main>
+    <script>
+        const aBtn = document.querySelectorAll('a')
+        const bar = document.querySelectorAll('aside .bar')
+        const bg = document.querySelectorAll('main .bg')
+        console.log(aBtn, bar, bg)
+
+        aBtn.forEach(function(t,i){
+            t.addEventListener('click',function(e){
+                e.preventDefault() //a href 기능막기 위로 새로고침
+                window.scrollTo(0, bg[i].offsetTop)
+            })
+        })
+
+        bar.forEach(function(t,i){
+            t.addEventListener('click',function(e){
+                for(let i of bar){i.style.display='block'}
+                e.preventDefault() //a href 기능막기 위로 새로고침
+                window.scrollTo(0, bg[i].offsetTop)
+            })
+        })
+
+        const body = document.querySelector('body,html')
+        console.log(body)
+        window.addEventListener('scroll',function(){
+            console.log('body.scrollTop>>', body.scrollTop)
+            bar.forEach(function(t,i){
+                if(body.scrollTop >= bg[i].offsetTop){
+                    for(let j of bar){j.classList.remove('active')}
+                    t.classList.add('active')
+                }
+            })
+        })
+
+        // 마우스 움직일 때 이벤트
+        const mouse = document.querySelector('#mouse')
+        console.log(mouse)
+        window.addEventListener('mousemove',function(e){
+            // console.log(e)
+            mouse.style.left = `${e.clientX}px`
+            mouse.style.top = `${e.clientY}px`
+        })
+    </script>
+</body>
+</html>
